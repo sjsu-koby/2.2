@@ -22,6 +22,7 @@ var dog3;
 var dog4;
 var dogs = [];
 var dog = random(dogs);
+var button;
 
 function preload() {
 
@@ -29,6 +30,8 @@ function preload() {
 
   for (let i = 0; i < 5; i++) {
     dogs[i] = loadImage(`images/dog` + i + `.jpg`);
+
+
   }
   // dog0 = loadImage(`images/dog0.jpg`);
   // dog1 = loadImage(`images/dog1.jpg`);
@@ -41,9 +44,13 @@ function setup() {
   createCanvas(600, 600);
   background(0, 225, 255);
   drawDogIntro();
-  textSize(32);
-  text("Name the Dogs!", width * .3, height * .18);
+  textStyle(BOLD);
+  textSize(42);
 
+  button = createButton("Name a Dog!");
+  button.mousePressed(clickButton);
+  button.class("randomButton");
+  button.position(width * .33, height * .05);
 }
 
 function draw() {
@@ -82,11 +89,11 @@ function drawDog4() {
 
 }
 
-function mousePressed() {
+function clickButton() {
   if (dognames[0]) {
     background(0, 225, 255);
     randomIndex = int(random(dognames.length));
-    text(dognames[randomIndex].name, width * .43, height * .99);
+    text(dognames[randomIndex].name, width * .43, height * .98);
     randomImage = int(random(dogs.length));
     image(dogs[randomImage], width * .1, height * .1);
     dognames.splice(randomIndex, 0);

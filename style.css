@@ -5,3 +5,9 @@ html, body {
 canvas {
   display: block;
 }
+
+.randomButton {
+  padding: 20px;
+  background-color: #ff9900;
+  font-size: 30px;
+}
