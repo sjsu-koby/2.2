@@ -46,7 +46,6 @@ function setup() {
   drawDogIntro();
   textStyle(BOLD);
   textSize(42);
-
   button = createButton("Name a Dog!");
   button.mousePressed(clickButton);
   button.class("randomButton");
