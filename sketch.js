@@ -56,7 +56,8 @@ function setup() {
   background(parkBackground);
   textStyle(BOLD);
   textSize(42);
-  button = createButton("Name a Dog!");
+  // button = createButton("Name a Dog!");
+  button = select("#randomButton")
   button.mousePressed(clickButton);
   button.class("randomButton");
   button.position(width * .39, height * 1);
