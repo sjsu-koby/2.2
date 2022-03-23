@@ -26,9 +26,9 @@ var button;
 
 function preload() {
 
-  introdogs = loadImage(`images/multipledogs.jpg`);
+  introdogs = loadImage(`images/park.jpg`);
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 4; i++) {
     dogs[i] = loadImage(`images/dog` + i + `.jpg`);
 
 
