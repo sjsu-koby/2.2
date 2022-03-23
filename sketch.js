@@ -1,6 +1,6 @@
 // dogs I have met
 var dognames = [{
-  name: "Kira"
+  name: "Oscar"
 }, {
   name: "Kandy"
 }, {
@@ -8,28 +8,39 @@ var dognames = [{
 }, {
   name: "Nalla"
 }, {
-  name: "Holy"
+  name: "Rigby"
+}, {
+  name: "Harley"
+}, {
+  name: "Kiera"
+}, {
+  name: "Baxter"
+}, {
+  name: "Snow"
+}, {
+  name: "Gizmo"
 }];
 
 var randomImage;
 var randomIndex;
 var counter = 0;
 var introdogs;
+var parkBackground;
 var dog0;
 var dog1;
 var dog2;
 var dog3;
 var dog4;
 var dogs = [];
-var dog = random(dogs);
 var button;
 
 function preload() {
 
+  parkBackground = loadImage('images/dogpark.png')
   introdogs = loadImage(`images/park.jpg`);
 
-  for (let i = 0; i < 4; i++) {
-    dogs[i] = loadImage(`images/dog` + i + `.jpg`);
+  for (let i = 0; i < 9; i++) {
+    dogs[i] = loadImage(`images/dog` + i + `.png`);
 
 
   }
@@ -41,15 +52,14 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(600, 600);
-  background(0, 225, 255);
-  drawDogIntro();
+  createCanvas(1000, 600);
+  background(parkBackground);
   textStyle(BOLD);
   textSize(42);
   button = createButton("Name a Dog!");
   button.mousePressed(clickButton);
   button.class("randomButton");
-  button.position(width * .33, height * .05);
+  button.position(width * .39, height * 1);
 }
 
 function draw() {
@@ -90,9 +100,10 @@ function drawDog4() {
 
 function clickButton() {
   if (dognames[0]) {
-    background(0, 225, 255);
+    background(introdogs);
     randomIndex = int(random(dognames.length));
-    text(dognames[randomIndex].name, width * .43, height * .98);
+    fill(255, 255, 255);
+    text(dognames[randomIndex].name, width * .44, height * .98);
     randomImage = int(random(dogs.length));
     image(dogs[randomImage], width * .1, height * .1);
     dognames.splice(randomIndex, 0);
