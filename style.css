@@ -11,3 +11,12 @@ canvas {
   background-color: #ff9900;
   font-size: 30px;
 }
+.artistButton {
+  font-size: 15px;
+}
+
+.artist {
+  margin-left: 0;
+  margin-top: 15%;
+  text-align: center;
+}
